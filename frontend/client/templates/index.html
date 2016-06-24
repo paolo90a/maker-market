@@ -1,93 +1,187 @@
 <body>
   <div class="container">
-    <h1>
-      <img alt=Maker src=https://makerdao.com/splash/images/logo.svg>
-      <span>Market</span>
-    </h1>
-
-    <p>
-      This is a simple on-chain OTC market. Either pick an order below (in which case delivery will happen instantly), or <a href="#neworder">submit a new order</a>.
-    </p>
-
     <p class="text-danger">
       <strong>Warning!</strong> Maker Market is undergoing alpha testing: Proceed at your own risk, and use only small amounts of {{quoteCurrency}} and {{baseCurrency}}.
     </p>
-
-    <p class="text-success">
-      <strong>Update notice:</strong> If you have any open orders at the previous market <a href="http://makerdao.github.io/maker-otc/">Maker OTC</a>; be sure to cancel them there to unlock the held funds!
-    </p>
-
+    
+    
+    <div class="up1" style="height:200px;border:solid">
+    <hr>
+    
+    
+    <div class="logo-up" style="width:100px;float:left;border:solid">
+    <img alt=Maker style="width:80px;vertical-align:middle"  src=https://makerdao.com/splash/images/logo.svg>
+    </div>
+    
+    
+    <div class="connection-up" style="float:left; border:solid">
     <p>
-      Network: {{network}}
+       {{network}}
+       {{> whatisthis section="network"}}
+       <br>
       {{#unless isConnected}}
-        (not connected)
+      <div id="circle-notconnected" style="float:left"></div>
+        NOT CONNECTED
       {{else}}
         {{#if syncing}}
-          (syncing {{syncingPercentage}}%)
+        <div id="circle-loading" style="float:left"></div>
+          SYNCING {{syncingPercentage}}%
         {{else}}
           {{#if outOfSync}}
-            (out of sync, waiting for synchronization)
+          <div id="circle-loading" style="float:left"></div>
+            OUT OF SYNC <br><i>waiting for synchronization</i>
           {{else}}
             {{#if loading}}
+            <div id="circle-loading" style="float:left"></div>
               (loading offers {{loadingProgress}}%)
             {{else}}
               {{#if ready}}
-                (ready)
+              <div id="circle-connected" style="float:left"></div>
+              CONNECTED
               {{/if}}
             {{/if}}
           {{/if}}
         {{/if}}
       {{/unless}}
-      {{> whatisthis section="network"}}
+    
     </p>
-
-    {{#if ready}}
-      {{#unless equals network 'private'}}
+    </div>
+    
+    <div class="graphs-up" style="width:150px;border:solid;float:left;margin-top:30px">
+    graphs
+    </div>
+    
+    
+    <div class="contr-acc-up" style="width:250px;border:solid;float:left">
+     {{#if ready}}
+    {{#unless equals network 'private'}}
         <p>
-          Contract: <a href={{contractHref}}>{{contractAddress}}</a>
-          {{> whatisthis section="contract"}}
+          Contract: <div id="contr-quest"><div id="contr"> <a href={{contractHref}}>{{contractAddress}}</a></div>{{> whatisthis section="contract"}}</div>
         </p>
       {{/unless}}
-      {{> accountSelector }}
-      {{> currencySelector }}
-      <p>
-        Balance: {{formatBalance ETHBalance}} ETH
-        {{> whatisthis section="balance"}}
+    {{> accountSelector }}
+    {{/if}}
+    </div>
+    
+    <div class="balance-up" style="width:250px;border:solid;float:left">
+    {{#if ready}}
+    <p>
+        Available balance<br> ETH {{formatBalance ETHBalance}} 
+        
       </p>
+    {{/if}}
+    </div>
+    
+    
+    </div>
+    
+    
+    
+    {{#if ready}}
+    
+   
+    
+   
+       <div style="width:1000;border:solid;height:80px"> 
+      <div class="hr" style="width:238px;height:30px;float:left" >
+      <hr>
+ </div>
+    <ul class="nav nav-pills nav-wizard" role="tablist" style="width:444px;float:left">
+      <li class="active">
+        <a href="#trade" aria-controls="trade" role="tab" data-toggle="tab">TRADE</a>
+      </li>
+      <li >
+        <a href="#depwith" aria-controls="depwith" role="tab" data-toggle="tab">DEPOSIT/WITHDRAW</a>
+      </li>
+      <li >
+        <a href="#transfer" aria-controls="transfer" role="tab" data-toggle="tab">TRANSFER</a>
+      </li>
+    </ul>
+ <div class="hr" style="width:238px;height:30px;float:left" >
+      <hr>
+ </div>
+  </div>
+  <div class="tab-content" style="float:left">
+    <div role="tabpanel" class="tab-pane active o" id="trade">
+      
+      <div id="bal" style="width:100%;border:solid;float:left;height:100px">
+      <div id="bal-left" style="width:200px;border:solid;float:left">
+      {{quoteCurrency}}
+      {{formatBalance token.balance}}
+        {{token.quoteCurrency}}
+        <br>
+        balance
+        </div>
+      
+      <div id="bal-mid" style="width:500px;border:solid;float:left">
+      {{> currencySelector }}
+        </div>
+      
+      <div id="bal-right" style="width:200px;border:solid;float:left">
+      {{baseCurrency}}
+      {{formatBalance token.balance}}
+        {{token.baseCurrency}}
+        <br>
+        available balance
+        </div>
+      
+      </div>
+      
+      
+      
+      
+      <div id="new-order" style="width:100%;height:600px;border:solid;float:left">
+      
+      
+            {{> neworder}}
+          
+      
+      
+      
+      </div>
+      <!--
       <p>Tokens:
         {{#each token in allTokens}}
           {{formatBalance token.balance}}
           {{#if equals token._id 'ETH'}}
-            <a href="#ethtokens">{{token._id}}</a> {{> whatisthis section="eth-tokens"}}
+            <a href="#ethtokens">{{token._id}}</a> 
           {{else}}
-            {{token._id}}
+            {{token._id}}      
           {{/if}}
           |
         {{/each}}
-        {{> whatisthis section="tokens"}}
       </p>
       <p>
         <a href="#allowance">Allowance</a>: {{#each token in allTokens}}{{formatBalance token.allowance}} {{token._id}} | {{/each}}
         {{> whatisthis section="allowance"}}
       </p>
-
+      -->
+      
       {{#if contractExists}}
-        <div class=row>
+       <div id="bu-sel" style="height:300px;width:100%;border:solid;float:left">
           <section>
-            {{> orderbook title='Buy orders' subtitle=(concat '(click to sell ' baseCurrency ')') priceLabel='Bid Price' priceClass='bid' orders=(findOffers 'bid') canAccept=true}}
+            {{> orderbook title='Buys'  priceLabel='Bid Price' priceClass='bid' orders=(findOffers 'bid') canAccept=false}}
           </section>
           <section>
-            {{> orderbook title='Sell orders' subtitle=(concat '(click to buy ' baseCurrency ')') priceLabel='Ask Price' priceClass='ask' orders=(findOffers 'ask') canAccept=true}}
+            {{> orderbook title='Sells'  priceLabel='Ask Price' priceClass='ask' orders=(findOffers 'ask') canAccept=false}}
           </section>
-        </div>
-        <div class=row>
-          <section>
-            {{> neworder}}
-          </section>
+       </div>
+        
+        
+          
           <section>
             {{> myorders}}
           </section>
-        </div>
+        
+        
+{{/if}}
+      
+    </div>
+    <div role="tabpanel" class="tab-pane o" id="depwith">
+      {{#if contractExists}}  
+  
+  
+        
         <div class=row>
           <section>
             <h2 id="allowance">
@@ -104,6 +198,12 @@
             {{> ethtokens}}
           </section>
         </div>
+        
+       {{/if}} 
+    </div>
+    <div role="tabpanel" class="tab-pane o" id="transfer">
+      {{#if contractExists}}  
+        
         <div class=row>
           <section>
             {{> sendtokens}}
@@ -116,6 +216,33 @@
           Could not find the contract on your current blockchain environment.
         </p>
       {{/if}}
+    </div>
+  </div>
+   
+   
+   
+   
+   
+ 
+   
+   
+    
+      
+      
+      
+      
+
+
+
+
+
+
+
+
+
+      
+
+       
     {{/if}}
     {{#unless isConnected}}
       {{> noEthereum}}
