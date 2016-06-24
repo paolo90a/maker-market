@@ -2,9 +2,157 @@
 * { outline: none }
 * { box-sizing: border-box }
 
+
+
+
+
+
+
+
+
+/*ADDED CSS*/
+
+body {background-color: #F8F7F5}
+
+#circle-connected{
+width: 12px;
+      height: 12px;
+      margin-top:6px;
+      margin-right:4px;
+      border-radius: 25px;
+      background: #1ABC9C;
+    }
+
+#circle-loading{
+width: 12px;
+      height: 12px;
+      margin-top:6px;
+      margin-right:4px;
+      border-radius: 25px;
+      background: #ff6600;
+    }
+
+#circle-notconnected{
+width: 12px;
+      height: 12px;
+      margin-top:6px;
+      margin-right:4px;
+      border-radius: 25px;
+      background: #cc0000;
+    }
+
+
+.logo-up{
+position: relative;
+top: 10%; 
+}
+
+.connection-up{
+position: relative;
+top: 10%; 
+}
+
+
+#contr {
+    white-space: nowrap;
+    width: 105px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    float:left;
+    margin-left:8px;
+    padding-top:3px;
+}
+
+#contr-quest {
+    width: 138px;
+    float:right;
+    border: 1px solid #DDDEE2;
+    border-radius:30px;
+}
+
+hr{border-color: #DCDDE0}
+
+
+.nav-wizard li +li{margin-left:0;
+margin-top:3px;
+}
+
+
+
+
+
+
+.nav-wizard li:first-child a {
+font-size:0.5rem;
+                    border-radius:20px 0 0 20px;
+                  border: 1px solid #DCDDE0;
+                  margin-left:0;
+                  width:124px;
+                  height:36px;
+                  margin-top:3px;
+                  padding-left:30px;
+                }
+
+
+
+
+
+.nav-wizard li:nth-child(2) a {
+font-size:0.5rem;
+                    border-radius:0 0 0 0;
+                  border-top:1px solid #DCDDE0;
+                  border-bottom:1px solid #DCDDE0;
+                  margin-left:0;
+                 height:36px;
+                 width:196px;
+                 padding-left:25px;
+                }
+
+ .nav-wizard li:last-child a {
+font-size:0.5rem;
+                    border-radius:0 20px 20px 0;
+                  border:1px solid #DCDDE0;
+                  margin-left:0;
+                  height:36px;
+                  width:124px;
+                  padding-left:20px;
+                }
+
+
+.nav-wizard >li a{
+background-color:transparant;
+color:#DCDDE0;
+padding-top:2px;
+
+}
+
+
+.nav-pills > li.active > a, .nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+    color: black;
+    background-color: #eee;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+/*ADDED CSS END*/
+
+
+
+
+
+
 body { font-family: sans-serif }
 body { line-height: 1rem }
-body { font-size: .8rem }
+body { font-size: .6rem }
 body > div.container { padding: 1rem }
 body > div.container { padding-bottom: 3rem }
 body > div.container { max-width: 20rem }
@@ -22,7 +170,7 @@ h1 span { position: relative }
 h1 span { top: 2.2rem }
 h1 span { left: -1.25rem }
 
-h2 { border-top: .1rem solid currentcolor }
+
 h2 { font-weight: bold }
 h2 span { font-size: .6rem }
 h2 span { font-weight: normal }
@@ -92,11 +240,12 @@ button.btn-default:disabled { color: #eee }
 .input { text-transform: uppercase }
 .input[disabled] { cursor: not-allowed }
 
+
 @media (min-width: 640px)
 { :root { font-size: 20pt } }
 
 @media (min-width: 1280px) {
-body > div.container { max-width: 40rem }
+body > div.container { max-width: 980px }
 h1 { text-align: left }
 h1 img { margin-left: -1.2rem }
 .o { overflow: hidden }
@@ -104,6 +253,8 @@ h1 img { margin-left: -1.2rem }
 section { float: right; width: 48% }
 section:first-of-type { float: left }
 }
+
+
 
 #spnSwitchCurrencies {
     margin: 0px 10px;
