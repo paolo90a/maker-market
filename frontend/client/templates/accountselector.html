@@ -1,13 +1,22 @@
 <template name="accountSelector">
-  <p>Accounts:
+  <p>
+  Accounts:
+  <div class="style-select rounded">
+  
+    
+    
     <select>
     {{#each accounts}}
       <option value="{{this}}" selected={{equals this address}}>{{this}}</option>
     {{/each}}
     </select>
-    {{> whatisthis section="account"}}
+    </div>
+    
+    
   </p>
+  <!--
   <p>Active Account:
     <pre>{{currentAccount}}</pre>
   </p>
+  -->
 </template>
