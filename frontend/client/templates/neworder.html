@@ -1,97 +1,123 @@
 <template name="neworder">
   <form id="neworder">
-    <h2>
+  
+  <div style="height:400px;width:442px;border:solid;float:left">
+  <div style="height:320px;width:400px;border:solid;float:left;margin-left:20px">
+  <div style="width:400px;border:solid;height:70px">
+  
+  
+  
+    <div style="width:200px;border:solid;float:left">
+    
       New order
-      {{> whatisthis section="new-order"}}
-    </h2>
-    <table>
-      <tbody>
-        <tr>
-          <th>
-            Order type
-          </th>
-          <td>
+      
+    
+    </div>
+    <div style="border:solid;float:right;width:150px;height:70px">
+        
             <div class="radio">
               <label><input type="radio" value="buy" {{b "group: type"}}> Buy {{baseCurrency}}</label>
               <label><input type="radio" value="sell" {{b "group: type"}}> Sell {{baseCurrency}}</label>
             </div>
-          </td>
-        </tr>
-        <tr>
-          <th>
-            {{fancyType}} Price (in {{quoteCurrency}}/{{baseCurrency}})
-          </th>
-          <td>
-            <input type="number" class="input" step="any" min="0" {{b "value: price, input: calcTotal"}}>
-          </td>
-        </tr>
-        {{#unless priceDefined}}
-          <tr>
-            <td colspan="2">
-              <span class="help-block">Enter a price to unlock amount and total.</span>
-            </td>
-          </tr>
+         
+        </div>
+        </div>
+      <div style="width:390px;border:solid">
+      
+       <div style="width:390px;height:70px;border:solid">
+       
+       {{#unless hasBalance sellCurrency}}
+          
+            <li>
+              <span class="help-block">You don't have enough {{#if equals sellCurrency 'ETH'}}<a href="#ethtokens">{{sellCurrency}}</a>{{else}}{{sellCurrency}}{{/if}} tokens.</span>
+            </li>
+          
+        {{else}}
+          {{#unless hasAllowance sellCurrency}}
+           <li>
+                <span class="help-block">You don't have enough {{sellCurrency}} <a href="#allowance">allowance</a>.</span>
+              </li>
+          {{/unless}}
         {{/unless}}
-        <tr>
-          <th>
-            Amount (in {{baseCurrency}})
-          </th>
-          <td>
-            <input type="number" class="input" step="any" min="0" {{b "value: amount, input: calcTotal, enable: priceDefined, attr: { max: maxAmount }"}}>
-          </td>
-        </tr>
-        <tr>
-          <th>
-            Total (in {{quoteCurrency}})
-          </th>
-          <td>
-            <input type="number" class="input" step="any" min="0" {{b "value: total, input: calcAmount, enable: priceDefined, attr: { max: maxTotal }"}}>
-          </td>
-        </tr>
-      </tbody>
+        {{#let offer=betterOffer}}
+          {{#if offer}}
+            <li>
+                <span class="help-block">There is a better <a href="#offerModal" data-toggle="modal" data-target="#offerModal" {{b "click: openOfferModal"}}>offer</a>.</span>
+              </li>
+          {{/if}}
+        {{/let}}
+        {{#unless equals lastError ''}}
+          <li>
+              <span class="help-block">{{lastError}}</span>
+           </li>
+        {{/unless}}
+       
+       
+  </div>
+      
+      <div style="height:70px">
+        <div style="border-bottom:solid;">
+         {{fancyType}} Price  
+          <div style="float:right">{{quoteCurrency}}</div>
+            <input type="number" class="input" step="any" min="0" style="height:30px;float:right" {{b "value: price, input: calcTotal"}}>
+          
+        </div>
+        
+        {{#unless priceDefined}}
+          
+            
+              <div class="help-block"  >Enter a price to unlock amount and total.</div>
+            
+          
+        {{/unless}}
+        </div>
+        <div style="border-bottom:solid;">
+            Amount 
+             <div style="float:right">{{baseCurrency}}</div>
+          
+          
+            <input type="number" class="input" step="any" min="0" style="height:30px;float:right" {{b "value: amount, input: calcTotal, enable: priceDefined, attr: { max: maxAmount }"}}>
+          </div>
+        
+       
+      
+      
       <tfoot>
         <tr>
           <th>
           </th>
           <td>
-            <button class="btn btn-default" data-toggle="modal" data-target="#newOrderModal" {{b "enable: canSubmit, click: preventDefault"}}>Submit order</button>
+            <button class="btn btn-default" data-toggle="modal"  data-target="#newOrderModal" {{b "enable: canSubmit, click: preventDefault"}}>Submit order</button>
           </td>
         </tr>
-        {{#unless hasBalance sellCurrency}}
-          <tr>
-            <td colspan="2">
-              <span class="help-block">You don't have enough {{#if equals sellCurrency 'ETH'}}<a href="#ethtokens">{{sellCurrency}}</a>{{else}}{{sellCurrency}}{{/if}} tokens.</span>
-            </td>
-          </tr>
-        {{else}}
-          {{#unless hasAllowance sellCurrency}}
-            <tr>
-              <td colspan="2">
-                <span class="help-block">You don't have enough {{sellCurrency}} <a href="#allowance">allowance</a>.</span>
-              </td>
-            </tr>
-          {{/unless}}
-        {{/unless}}
-        {{#let offer=betterOffer}}
-          {{#if offer}}
-            <tr>
-              <td colspan="2">
-                <span class="help-block">There is a better <a href="#offerModal" data-toggle="modal" data-target="#offerModal" {{b "click: openOfferModal"}}>offer</a>.</span>
-              </td>
-            </tr>
-          {{/if}}
-        {{/let}}
-        {{#unless equals lastError ''}}
-          <tr>
-            <td colspan="2">
-              <span class="help-block">{{lastError}}</span>
-            </td>
-          </tr>
-        {{/unless}}
+        
       </tfoot>
-    </table>
+    
+    </div>
+    </div>
+   </div>
+   
+   <div style="height:400px;width:40px;float:left">
+   
+   <img alt="My Image" style="width:100%;margin-top:150px" src="http://i63.tinypic.com/2lc8e3a.png" />
+    </div>
+   <div style="height:400px;width:442px;border:solid;float:left">
+   
+   <div style="height:300px;width:340px;float:left;margin-left:50px">
+   <div style="height:273px;width:340px;float:left">
+   <h2>TOTAL </h2> 
+   </div>
+   <div style="height:27px;width:340px;border-bottom:solid;float:left;text-align:right">
+   {{total}} {{quoteCurrency}}
+   </div>
+  </div>
+    </div>
   </form>
+  
+  
 
+  
+  
   <div class="modal fade" id="newOrderModal" tabindex="-1" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -108,7 +134,7 @@
               </tr>
               <tr>
                 <th>Price</th>
-                <td>{{formatBalance (toWei price)}} {{quoteCurrency}}/{{baseCurrency}}</td>
+                <td>{{formatBalance (toWei price)}} {{quoteCurrency}}</td>
               </tr>
               <tr>
                 <th>Volume</th>
