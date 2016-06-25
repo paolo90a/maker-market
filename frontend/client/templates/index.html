@@ -1,11 +1,11 @@
 <body>
-  <div class="container">
+  <div class="container" style="border:solid">
     <p class="text-danger">
       <strong>Warning!</strong> Maker Market is undergoing alpha testing: Proceed at your own risk, and use only small amounts of {{quoteCurrency}} and {{baseCurrency}}.
     </p>
     
     
-    <div class="up1" style="height:200px;border:solid">
+    <div class="up1" style="height:200px;border:solid;width:980px">
     <hr>
     
     
@@ -56,7 +56,7 @@
      {{#if ready}}
     {{#unless equals network 'private'}}
         <p>
-          Contract: <div id="contr-quest"><div id="contr"> <a href={{contractHref}}>{{contractAddress}}</a></div>{{> whatisthis section="contract"}}</div>
+          Contract: <div id="contr-quest"><div id="contr"> {{contractAddress}}</div>{{> whatisthis section="contract"}}</div>
         </p>
       {{/unless}}
     {{> accountSelector }}
@@ -82,7 +82,8 @@
    
     
    
-       <div style="width:1000;border:solid;height:80px"> 
+       <div style="width:1220;border:solid;height:80px"> 
+       
       <div class="hr" style="width:238px;height:30px;float:left" >
       <hr>
  </div>
@@ -104,7 +105,7 @@
   <div class="tab-content" style="float:left">
     <div role="tabpanel" class="tab-pane active o" id="trade">
       
-      <div id="bal" style="width:100%;border:solid;float:left;height:100px">
+      <div id="bal" style="width:100%;border:solid;float:left;height:150px">
       <div id="bal-left" style="width:200px;border:solid;float:left">
       {{quoteCurrency}}
       {{formatBalance token.balance}}
