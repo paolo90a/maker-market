@@ -55,19 +55,21 @@ top: 10%;
 
 #contr {
     white-space: nowrap;
-    width: 105px;
+    width: 100px;
     overflow: hidden;
     text-overflow: ellipsis;
     float:left;
-    margin-left:8px;
-    padding-top:3px;
+    margin-left:12px;
+    padding-top:5px;
 }
 
 #contr-quest {
     width: 138px;
-    float:right;
+    height:36px;
+    float:left;
     border: 1px solid #DDDEE2;
     border-radius:30px;
+    font-size:13px;
 }
 
 hr{border-color: #DCDDE0}
@@ -78,8 +80,45 @@ margin-top:3px;
 }
 
 
+.rounded{
+width:138px;
+	border: 1px solid #cfcfcf;
+	height: auto;
+	border-radius: 20px;
+	padding:3px 4px 4px;
+	position: relative;
+	z-index: 0;
+	overflow:hidden;
+	height:36px;
+	font-size:13px;
+}
 
+.rounded select {
+    width:120px; 
+    margin-top:6px;
+    overflow:hidden; 
+    white-space:nowrap;
+    -ms-text-overflow:ellipsis;
+    text-overflow:ellipsis;
+  background-color: transparent;
+	outline: none;
+	border:none;
+	
+}
 
+.rounded:before {
+  
+    height:23px;
+    width:26px;
+    display:block;
+    content:'...';
+    position:absolute;
+    top:6px;
+    right:6px;
+    background: url(http://i67.tinypic.com/16awax4.png) #F8F7F5 no-repeat right;
+     pointer-events:none;
+      
+}
 
 
 .nav-wizard li:first-child a {
@@ -135,11 +174,94 @@ padding-top:2px;
 
 
 
+.quo-cur{
+width:89px;
+	border: 1px solid #cfcfcf;
+	height: auto;
+	border-radius: 20px 0 0 20px;
+	padding:0px 4px 4px;
+	position: relative;
+	z-index: 0;
+	overflow:hidden;
+	height:36px;
+	font-size:13px;
+	float:left;
+}
 
+.quo-cur select {
 
+    width:120px; 
+    height:35px;
+    margin-top:0px;
+    margin-left:0px;
+    overflow:hidden; 
+    white-space:nowrap;
+    -ms-text-overflow:ellipsis;
+    text-overflow:ellipsis;
+  background-color: transparent;
+	outline: none;
+	border:none;
+	
+	
+	text-indent:30px;
+}
 
+.quo-cur:before {
+  
+    height:23px;
+    width:26px;
+    display:block;
+    content:'';
+    position:absolute;
+    top:6px;
+    right:55px;
+    background: url(http://i67.tinypic.com/16awax4.png) #F8F7F5 no-repeat left;
+     pointer-events:none;
+      
+}
 
+.base-cur{
+float:left;
+width:89px;
+	border: 1px solid #cfcfcf;
+	border-left:none;
+	height: auto;
+	border-radius: 0 20px 20px 0;
+	padding:0px 3px 4px;
+	position: relative;
+	z-index: 0;
+	overflow:hidden;
+	height:36px;
+	font-size:13px;
+}
 
+.base-cur select {
+    width:120px; 
+    height:35px;
+    margin-top:0px;
+    overflow:hidden; 
+    white-space:nowrap;
+    -ms-text-overflow:ellipsis;
+    text-overflow:ellipsis;
+  background-color: transparent;
+	outline: none;
+	border:none;
+	
+}
+
+.base-cur:before {
+  
+    height:23px;
+    width:26px;
+    display:block;
+    content:'';
+    position:absolute;
+    top:6px;
+    right:6px;
+    background: url(http://i67.tinypic.com/16awax4.png) #F8F7F5 no-repeat right;
+     pointer-events:none;
+      
+}
 
 
 
@@ -158,7 +280,7 @@ body > div.container { padding-bottom: 3rem }
 body > div.container { max-width: 20rem }
 body > div.container { margin: auto }
 
-h1, h2 { color: #546979 }
+h1 { color: #546979 }
 h1, h2 { line-height: 2rem }
 h1, h2 { margin-top: 1rem }
 
@@ -171,7 +293,7 @@ h1 span { top: 2.2rem }
 h1 span { left: -1.25rem }
 
 
-h2 { font-weight: bold }
+h2 { font-weight: normal }
 h2 span { font-size: .6rem }
 h2 span { font-weight: normal }
 h2 span { margin-left: .5rem }
@@ -189,7 +311,10 @@ td, th { padding: .2rem }
 
 small { color: lightgray }
 .o td { text-align: right }
-.o th { text-align: right }
+
+
+
+.o th { text-align: left }
 .o th { color: gray }
 .o tbody tr.confirmed td.buy { cursor: pointer }
 .o tbody tr.confirmed td.cant-buy { cursor: not-allowed }
@@ -206,20 +331,25 @@ small { color: lightgray }
 .o tbody tr.pending { color: grey }
 .o tbody tr.bought { font-weight: 600 }
 .o tbody tr.helper-row { color: grey }
-.o tbody tr.helper-row { font-size: smaller }
+.o tbody tr.helper-row { font-size: 10px }
 
+.help-block{font-size:12px} 
+.help-block{height:10px}
 .nostretch { width: 1% }
 .nostretch { white-space: nowrap }
 
 td.bid, th.bid { color: darkgreen }
 td.ask, th.ask { color: darkred }
 
+
+
+
 form th { text-align: right }
 form th { padding: .2rem 1rem }
 form th { color: gray }
-form th { width: 50% }
+form th { width: 100% }
 form tfoot td { text-align: right }
-form tfoot td { padding-top: 1rem }
+form tfoot td { padding-top: 0.5rem }
 
 .radio label { width: 8rem }
 .radio input[type=radio] { margin-top: 5px }
@@ -233,19 +363,24 @@ button { border-radius: .2rem }
 button { cursor: pointer }
 button.btn-default:disabled { color: #eee }
 
-.input { border: none }
-.input { border-bottom: .075rem solid #546979 }
+.input { border: solid }
+.input { width:250px}
+.input {text-align: right}
 .input { background: none }
 .input { padding: .1rem 0rem }
 .input { text-transform: uppercase }
 .input[disabled] { cursor: not-allowed }
 
 
+thead tr {background:#eee}
+
+
 @media (min-width: 640px)
 { :root { font-size: 20pt } }
 
-@media (min-width: 1280px) {
-body > div.container { max-width: 980px }
+@media (min-width: 1020px) {
+div.container{width:1080px}
+body > div.container { max-width: 1020px }
 h1 { text-align: left }
 h1 img { margin-left: -1.2rem }
 .o { overflow: hidden }
