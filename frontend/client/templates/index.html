@@ -131,7 +131,7 @@
       
       
       
-      <div id="new-order" style="width:100%;height:600px;border:solid;float:left">
+      <div id="new-order" style="width:100%;height:420px;border:solid;float:left">
       
       
             {{> neworder}}
@@ -160,19 +160,19 @@
       
       {{#if contractExists}}
        <div id="bu-sel" style="height:300px;width:100%;border:solid;float:left">
-          <section>
+          <div style="height:300px;width:442px;border:solid;float:left;background:white">
             {{> orderbook title='Buys'  priceLabel='Bid Price' priceClass='bid' orders=(findOffers 'bid') canAccept=false}}
-          </section>
-          <section>
+          </div>
+          <div style="height:300px;width:442px;border:solid;float:left;background:white;margin-left:40px">
             {{> orderbook title='Sells'  priceLabel='Ask Price' priceClass='ask' orders=(findOffers 'ask') canAccept=false}}
-          </section>
+          </div>
        </div>
         
         
           
-          <section>
+          <div style="height:400px;width:100%;border:solid;float:left">
             {{> myorders}}
-          </section>
+          </div>
         
         
 {{/if}}
