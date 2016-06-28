@@ -60,7 +60,7 @@
       <div style="height:70px">
         <div style="border-bottom:solid;">
          {{fancyType}} Price
-          <div style="float:right">{{quoteCurrency}}</div>
+          <div style="float:right">{{quoteCurrency}}/{{baseCurrency}}</div>
             <input type="number" class="input" step="any" min="0" style="height:30px;float:right" {{b "value: price, input: calcTotal"}}>
 
         </div>
@@ -136,7 +136,7 @@
               </tr>
               <tr>
                 <th>Price</th>
-                <td>{{formatBalance (toWei price)}} {{quoteCurrency}}</td>
+                <td>{{formatBalance (toWei price)}} {{quoteCurrency}}/{{baseCurrency}}</td>
               </tr>
               <tr>
                 <th>Volume</th>
