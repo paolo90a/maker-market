@@ -2,41 +2,74 @@
 * { outline: none }
 * { box-sizing: border-box }
 
+@font-face{
+font-family:Montserrat-Regular;
+src: url("Montserrat-Regular.otf") format("opentype");
+}
+
+/*
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+*/
 
 
-
-
-
-
-
-
+body { font-family: 'Montserrat-Regular' }
+body { font-size: 12px }
 /*ADDED CSS*/
+#av-bal{
+font-size:12px;
+text-align:center;
+
+}
+
+#network-top{
+text-transform: uppercase;
+color:#cfcfcf;
+}
+
+
+#av-bal-l{
+font-size:14px;
+color:#1ABC9C;
+position:relative;
+bottom:4px
+}
+
+#av-bal-n{
+font-family:'HelveticaNeue-light';
+font-size:30px;
+color:#1ABC9C;
+margin-left:3px;
+}
+
+
+
+
 
 body {background-color: #F8F7F5}
 
 #circle-connected{
-width: 12px;
-      height: 12px;
-      margin-top:6px;
-      margin-right:4px;
+width: 10px;
+      height: 10px;
+      margin-top:8px;
+      margin-right:3px;
       border-radius: 25px;
       background: #1ABC9C;
     }
 
 #circle-loading{
-width: 12px;
-      height: 12px;
-      margin-top:6px;
-      margin-right:4px;
+width: 10px;
+      height: 10px;
+      margin-top:8px;
+      margin-right:3px;
       border-radius: 25px;
       background: #ff6600;
     }
 
 #circle-notconnected{
-width: 12px;
-      height: 12px;
-      margin-top:6px;
-      margin-right:4px;
+width: 10px;
+      height: 10px;
+      margin-top:8px;
+      margin-right:3px;
       border-radius: 25px;
       background: #cc0000;
     }
@@ -66,7 +99,7 @@ top: 10%;
 #contr-quest {
     width: 138px;
     height:36px;
-    float:left;
+    float:right;
     border: 1px solid #DDDEE2;
     border-radius:30px;
     font-size:13px;
@@ -272,9 +305,9 @@ width:89px;
 
 
 
-body { font-family: sans-serif }
+
 body { line-height: 1rem }
-body { font-size: .6rem }
+
 body > div.container { padding: 1rem }
 body > div.container { padding-bottom: 3rem }
 body > div.container { max-width: 20rem }
@@ -300,8 +333,7 @@ h2 span { margin-left: .5rem }
 h2 span { color: gray }
 h2 .nav-tabs a:focus { outline: none }
 
-p { max-width: 30rem }
-p { margin: 0 0 10px }
+
 
 table { border-collapse: collapse }
 table { width: 100% }
