@@ -2,6 +2,10 @@
 <body>
 
   <div class="container" style="border:solid">
+    <p>
+          This is a simple on-chain OTC market. Either pick an order below (in which case delivery will happen instantly), or submit a new order.
+        </p>
+
     <p class="text-danger">
       <strong>Warning!</strong> Maker Market is undergoing alpha testing: Proceed at your own risk, and use only small amounts of {{quoteCurrency}} and {{baseCurrency}}.
     </p>
@@ -9,7 +13,7 @@
           <strong>Update notice:</strong> If you have any open orders at the previous market <a href="http://makerdao.github.io/maker-otc/">Maker OTC</a>; be sure to cancel them there to unlock the held funds!
         </p>
 
-       
+
 <hr>
 
 
@@ -131,29 +135,49 @@
         <div role="tabpanel" class="tab-pane active o" id="trade">
 
             <div id="bal" style="width:100%;border:solid;float:left;height:100px">
-                <div id="bal-left" style="width:200px;border:solid;float:left">
-                <span style="font-family:HelveticaNeue-light">{{quoteCurrency}}</span>
-                {{formatBalance token.balance}}
-                {{token.quoteCurrency}}
-                <br>
-                BALANCE
-                </div>
+                <div id="bal-left" style="width:300px;border:solid;float:left">
 
-                <div id="bal-mid" style="width:500px;border:solid;float:left">
+                <p id="bal-cur-av">
+                  <span style="font-family:HelveticaNeue;color:#9F9BD3;position:relative;bottom:4px">
+                  {{quoteCurrency}}
+                  </span>
+                    <span style="font-family:HelveticaNeue-light;color:#9F9BD3;font-size:30px">
+                    {{formatBalance token.balance}}
+                    {{token.quoteCurrency}}
+                    </span>
+
+                  <br>
+                  <span id="balcurav">BALANCE</span>
+                </p>
+                </div>
+                <div style="border:solid;height:60px;width:85px;float:left"></div>
+                <div id="bal-mid" style="width:190px;border:solid;float:left">
+
                 {{> currencySelector }}
-                </div>
 
-                <div id="bal-right" style="width:200px;border:solid;float:left">
+                <br>
+                <span id="balcurav" style="position:relative;margin-left:50px">CURRENCY PAIR</span>
+
+                </div>
+                <div style="border:solid;height:60px;width:85px;float:left"></div>
+                <div id="bal-right" style="width:290px;border:solid;float:left">
+                  <p id="bal-cur-av">
+                  <span style="font-family:HelveticaNeue;color:#1ABC9C;position:relative;bottom:4px">
                 {{baseCurrency}}
+              </span>
+
+              <span style="font-family:HelveticaNeue-light;color:#1ABC9C;font-size:30px">
                 {{formatBalance token.balance}}
                 {{token.baseCurrency}}
+              </span>
                 <br>
-                AVAILABLE BALANCE
+                <span id="balcurav">AVAILABLE BALANCE</span>
+              </p>
                 </div>
             </div>
 
 
-            <div id="new-order" style="width:100%;height:420px;border:solid;float:left">
+            <div id="new-order" style="width:100%;border:solid;float:left">
             {{> neworder}}
 
             </div>
