@@ -1,19 +1,23 @@
 <template name="orderRow">
-  <tr class={{order.status}} style="font-size:15px" title={{timestampToString order.timestamp true}} >
-    <td class={{order.type}} style="width:30%">{{formatBalance (toWei order.price)}}</td>
-    <td style="width:30%">{{formatBalance (order.volume quoteCurrency)}}</td>
-    <td style="width:40%">{{formatBalance (order.volume baseCurrency)}}</td>
-    
+
+  <tr  class={{order.status}}  title={{timestampToString order.timestamp true}}  >
+
+    <td style="padding-right:2rem" class={{order.type}} >{{formatBalance (toWei order.price)}}</td>
+    <td style="padding-right:2rem">{{formatBalance (order.volume quoteCurrency)}}</td>
+    <td style="padding-right:2rem" >{{formatBalance (order.volume baseCurrency)}}</td>
+
     <td>
       {{#if order.canCancel}}
         {{#if showCancel}}
           <button type="button" class="btn btn-default">
-            <span class="glyphicon glyphicon-remove cancel" aria-hidden="true"></span>                
+            <span class="glyphicon glyphicon-remove cancel" aria-hidden="true"></span>
           </button>
         {{/if}}
       {{/if}}
     </td>
+
   </tr>
+
   {{#if order.helper}}
     <tr class="helper-row">
       <td colspan="4">{{order.helper}}</td>

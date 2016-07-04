@@ -1,11 +1,16 @@
 <template name="orderbook">
-  <h2>
-    {{title}}
+  <div style="float:left;font-size:22px;font-family:HelveticaNeue;margin-top:20px;margin-bottom:20px;margin-left:20px;width:100%">
+    <span style="text-transform:uppercase">{{title}}</span>
     <span>{{subtitle}}</span>
     {{> whatisthis section="orderbook"}}
-  </h2>
+  </div>
+<div style="float:left;width:100%">
 
-  <div class=o>
+<div style="display:block;margin-top:20px;float:right;width:420px;height:200px;overflow-y:scroll">
+
+  <div  class=o>
     {{> orders orders=orders priceLabel=priceLabel priceClass=priceClass canAccept=canAccept}}
   </div>
+</div>
+</div>
 </template>

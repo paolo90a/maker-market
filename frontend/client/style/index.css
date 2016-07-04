@@ -16,7 +16,7 @@ body { font-family: 'Montserrat-Regular' }
 body { font-size: 12px }
 /*ADDED CSS*/
 #av-bal{
-font-size:12px;
+font-size:11px;
 text-align:center;
 
 }
@@ -28,21 +28,23 @@ color:gray;
 
 
 #av-bal-l{
-font-size:14px;
+  font-family:'HelveticaNeue';
+font-size:16px;
 color:#1ABC9C;
 position:relative;
-bottom:4px
+bottom:6px
 }
 
 #av-bal-n{
 font-family:'HelveticaNeue-light';
-font-size:30px;
+font-size:35px;
 color:#1ABC9C;
 margin-left:3px;
 }
 
 #bal-cur-av{
   text-align:center;
+
 }
 
 #balcurav{
@@ -50,7 +52,14 @@ margin-left:3px;
   font-size:10px;
 
 }
-
+ #bal-left{
+   width:500px;
+ }
+#bal-right{
+  width:500px;
+}
+#balsep{width:160px;
+height:80px}
 
 body {background-color: #F8F7F5}
 
@@ -303,8 +312,22 @@ width:89px;
 
 }
 
+.shadow{
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
+}
 
 
+
+.shadow-grad{
+
+  background: lightgray; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, red, yellow); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, red, yellow); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, red, yellow); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #F8F7F5, #e6e6e6); /* Standard syntax */
+
+box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.2), 0 2px 10px 0 rgba(0, 0, 0, 0.19);
+}
 /*ADDED CSS END*/
 
 
@@ -346,19 +369,24 @@ table { border-collapse: collapse }
 table { width: 100% }
 th { text-transform: uppercase }
 th { font-size: .6rem }
-td, th { padding: .2rem }
+td, th { padding-right: .0rem }
 
 small { color: lightgray }
+
+
+
+
+
+.o td{height:20px}
+.o tr { text-align: right;font-size:13px;font-family:HelveticaNeue;padding-right:10px}
+.o th { text-align: right;font-size:11px;font-family:HelveticaNeue;padding-right:2rem}
 .o td { text-align: right }
-
-
-
-.o th { text-align: left }
 .o th { color: gray }
+
 .o tbody tr.confirmed td.buy { cursor: pointer }
 .o tbody tr.confirmed td.cant-buy { cursor: not-allowed }
-.o tbody tr:hover { background: #eee }
-.o tbody tr:hover+tr.helper-row { background: #eee }
+.o tbody tr:hover { background: #F8F7F5 }
+.o tbody tr:hover+tr.helper-row { background: #F8F7F5}
 .o tbody tr.cancelled { color: grey }
 .o tbody tr.cancelled td { position: relative }
 .o tbody tr.cancelled td:before { content: " " }
@@ -377,8 +405,8 @@ small { color: lightgray }
 .nostretch { width: 1% }
 .nostretch { white-space: nowrap }
 
-td.bid, th.bid { color: darkgreen }
-td.ask, th.ask { color: darkred }
+td.bid{ color: green }
+td.ask { color: darkred }
 
 
 
@@ -393,6 +421,7 @@ form tfoot td { padding-top: 0.5rem }
 .radio label { width: 8rem }
 .radio input[type=radio] { margin-top: 5px }
 [type=number] { width: 8rem }
+
 
 button { border: .075rem solid currentcolor }
 button { padding: .1rem .8rem }
@@ -411,11 +440,11 @@ button.btn-default:disabled { color: #eee }
 .input[disabled] { cursor: not-allowed }
 
 
-thead tr {background:#eee}
 
+thead tr {background:#F8F7F5}
 
-@media (min-width: 640px)
-{ :root { font-size: 20pt } }
+.container {min-width:580px}
+ :root { font-size: 20pt }
 
 @media (min-width: 1020px) {
 div.container{width:1080px}
@@ -426,6 +455,15 @@ h1 img { margin-left: -1.2rem }
 .row { overflow: hidden }
 section { float: right; width: 48% }
 section:first-of-type { float: left }
+
+#bal-left{
+  width:300px;
+}
+#bal-right{
+  width:290px;
+}
+#balsep{width:83px}
+
 }
 
 

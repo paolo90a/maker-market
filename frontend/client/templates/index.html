@@ -1,7 +1,7 @@
 
 <body>
 
-  <div class="container" style="border:solid">
+  <div class="container" >
     <p>
           This is a simple on-chain OTC market. Either pick an order below (in which case delivery will happen instantly), or submit a new order.
         </p>
@@ -19,14 +19,14 @@
 
 
 
-        <div style="height:150px;width:480px;border:solid;float:left;">
+        <div style="height:100px;width:480px;float:left;">
 
-            <div class="logo-up" style="margin-top:-10px;float:left;border:solid;margin-left:10px">
+            <div class="logo-up" style="margin-top:-10px;float:left;margin-left:20px">
             <IMG SRC="favicon-128.png" height="80px">
             </div>
 
 
-            <div class="connection-up" style="float:left; border:solid; font-size:11px;">
+            <div class="connection-up" style="float:left; margin-left:10px;width:100px; font-size:11px;">
 
             <span id="network-top">{{network}}</span>
             {{> whatisthis section="network"}}
@@ -59,15 +59,15 @@
             </p>
             </div>
               {{#if ready}}
-              <div class="graphs-up" style="width:220px;border:solid;float:left;margin-top:10px">
+              <div class="graphs-up" style="width:220px;margin-left:30px;float:left;margin-top:15px">
               <IMG SRC="graphs.png" height="80px">
               </div>
               {{/if}}
         </div>
 
-        <div style="height:150px;width:480px;border:solid;float:left">
+        <div style="height:100px;width:480px;float:left">
           {{#if ready}}
-            <div style=";border:solid;float:left;margin-top:5px">
+            <div style="float:left;margin-top:10px">
             <p>Contract:</p>
             <span style="margin-top:14px;display:block">
             Accounts:
@@ -75,7 +75,7 @@
             </div>
             {{/if}}
 
-            <div class="contr-acc-up" style="width:150px;border:solid;float:left">
+            <div class="contr-acc-up" style="width:150px;float:left;margin-top:7px">
             {{#if ready}}
             {{#unless equals network 'private'}}
             <p>
@@ -86,11 +86,11 @@
             {{/if}}
             </div>
 
-            <div class="balance-up" style="width:230px;border:solid;float:left">
+            <div class="balance-up" style="width:230px;float:left;margin-top:3px;margin-left:9px">
             {{#if ready}}
             <p id="av-bal">
             AVAILABLE BALANCE <br>
-            <span id="av-bal-l" style="font-size:14px;color:#1ABC9C;position:relative;bottom:4px">ETH </span>
+            <span id="av-bal-l" style="color:#1ABC9C;position:relative">ETH </span>
             <span id="av-bal-n">{{formatBalance ETHBalance}}</span>
             </p>
 
@@ -107,7 +107,7 @@
 
 
 
-    <div style="width:100%;border:solid;float:left;margin-top:10px">
+    <div style="width:100%;float:left;margin-top:10px">
 
         <div class="hr" style="width:254px;height:30px;float:left" >
         <hr>
@@ -131,17 +131,16 @@
     </div>
 
 
-    <div class="tab-content" style="float:left">
-        <div role="tabpanel" class="tab-pane active o" id="trade">
 
-            <div id="bal" style="width:100%;border:solid;float:left;height:100px">
-                <div id="bal-left" style="width:300px;border:solid;float:left">
+
+            <div id="bal" style="width:100%;float:left;margin-top:50px">
+                <div id="bal-left" style="float:left">
 
                 <p id="bal-cur-av">
-                  <span style="font-family:HelveticaNeue;color:#9F9BD3;position:relative;bottom:4px">
+                  <span style="font-size:16px;font-family:HelveticaNeue;color:#9F9BD3;position:relative;bottom:6px">
                   {{quoteCurrency}}
                   </span>
-                    <span style="font-family:HelveticaNeue-light;color:#9F9BD3;font-size:30px">
+                    <span style="font-family:HelveticaNeue-light;color:#9F9BD3;font-size:35px">
                     {{formatBalance token.balance}}
                     {{token.quoteCurrency}}
                     </span>
@@ -150,8 +149,8 @@
                   <span id="balcurav">BALANCE</span>
                 </p>
                 </div>
-                <div style="border:solid;height:60px;width:85px;float:left"></div>
-                <div id="bal-mid" style="width:190px;border:solid;float:left">
+                <div id="balsep" style="float:left"></div>
+                <div id="bal-mid" style="width:190px;float:left">
 
                 {{> currencySelector }}
 
@@ -159,14 +158,14 @@
                 <span id="balcurav" style="position:relative;margin-left:50px">CURRENCY PAIR</span>
 
                 </div>
-                <div style="border:solid;height:60px;width:85px;float:left"></div>
-                <div id="bal-right" style="width:290px;border:solid;float:left">
+                <div style="height:60px;width:85px;float:left"></div>
+                <div id="bal-right" style="float:left">
                   <p id="bal-cur-av">
-                  <span style="font-family:HelveticaNeue;color:#1ABC9C;position:relative;bottom:4px">
+                  <span style="font-size:16px;font-family:HelveticaNeue;color:#1ABC9C;position:relative;bottom:6px">
                 {{baseCurrency}}
               </span>
 
-              <span style="font-family:HelveticaNeue-light;color:#1ABC9C;font-size:30px">
+              <span style="font-family:HelveticaNeue-light;color:#1ABC9C;font-size:35px">
                 {{formatBalance token.balance}}
                 {{token.baseCurrency}}
               </span>
@@ -176,8 +175,13 @@
                 </div>
             </div>
 
+            <div class="tab-content" style="float:left;margin-top:20px">
+                <div role="tabpanel" class="tab-pane active o" id="trade">
 
-            <div id="new-order" style="width:100%;border:solid;float:left">
+
+
+
+            <div id="new-order" style="width:100%;float:left">
             {{> neworder}}
 
             </div>
@@ -200,16 +204,16 @@
             -->
 
             {{#if contractExists}}
-            <div id="bu-sel" style="height:300px;width:100%;border:solid;float:left">
-                <div style="height:300px;width:442px;border:solid;float:left;background:white">
+            <div id="bu-sel" style="width:100%;float:left;margin-top:40px">
+                <div style="height:300px;width:442px;border:solid 1px #EFF1F3;border-radius:3px;float:left;background:white;margin-left:10px">
                 {{> orderbook title='Buys'  priceLabel='Bid Price' priceClass='bid' orders=(findOffers 'bid') canAccept=false}}
                 </div>
-                <div style="height:300px;width:442px;border:solid;float:left;background:white;margin-left:40px">
+                <div style="height:300px;width:442px;border:solid 1px #EFF1F3;border-radius:3px;float:left;background:white;margin-left:40px">
                 {{> orderbook title='Sells'  priceLabel='Ask Price' priceClass='ask' orders=(findOffers 'ask') canAccept=false}}
                 </div>
             </div>
 
-            <div style="height:400px;width:100%;border:solid;float:left">
+            <div style="width:100%;float:left;margin-top:40px">
             {{> myorders}}
             </div>
 
