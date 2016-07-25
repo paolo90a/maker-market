@@ -59,43 +59,30 @@
             </p>
             </div>
               {{#if ready}}
-              <div class="graphs-up" style="width:220px;margin-left:30px;float:left;margin-top:15px">
-              <IMG SRC="graphs.png" height="80px">
+              <div class="graphs-up" style="width:220px;margin-left:30px;float:left;margin-top:5px">
+              <IMG SRC="new-graphs.png" height="70px">
               </div>
               {{/if}}
         </div>
 
         <div style="height:100px;width:480px;float:left">
           {{#if ready}}
-            <div style="float:left;margin-top:10px">
-            <p>Contract:</p>
-            <span style="margin-top:14px;display:block">
-            Accounts:
-            </span>
-            </div>
+
             {{/if}}
 
-            <div class="contr-acc-up" style="width:150px;float:left;margin-top:7px">
+            <div class="contr-acc-up" style="width:470px;float:left;margin-top:10px">
             {{#if ready}}
             {{#unless equals network 'private'}}
-            <p>
-            <div id="contr-quest"><div id="contr"> {{contractAddress}}</div>{{> whatisthis section="contract"}}</div>
-            </p>
+            <span style="float:left;margin-top:5px">Contract:</span>
+            <div id="contr-quest" style="float:left;margin-left:10px"><div id="contr"> {{contractAddress}}</div>{{> whatisthis section="contract"}}</div>
+
             {{/unless}}
-            {{> accountSelector }}
+            <span style="float:left;margin-top:5px;margin-left:25px">Account:</span>
+          {{> accountSelector }}
             {{/if}}
             </div>
 
-            <div class="balance-up" style="width:230px;float:left;margin-top:3px;margin-left:9px">
-            {{#if ready}}
-            <p id="av-bal">
-            AVAILABLE BALANCE <br>
-            <span id="av-bal-l" style="color:#1ABC9C;position:relative">ETH </span>
-            <span id="av-bal-n">{{formatBalance ETHBalance}}</span>
-            </p>
 
-            {{/if}}
-            </div>
 
         </div>
 
@@ -142,7 +129,7 @@
                   </span>
                     <span style="font-family:HelveticaNeue-light;color:#9F9BD3;font-size:35px">
                     {{formatBalance token.balance}}
-                    {{token.quoteCurrency}}
+                    {{token.quoteCurrency}}|{{formatBalance ETHBalance}}
                     </span>
 
                   <br>
@@ -168,6 +155,8 @@
               <span style="font-family:HelveticaNeue-light;color:#1ABC9C;font-size:35px">
                 {{formatBalance token.balance}}
                 {{token.baseCurrency}}
+
+
               </span>
                 <br>
                 <span id="balcurav">AVAILABLE BALANCE</span>
